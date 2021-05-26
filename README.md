@@ -1,38 +1,57 @@
 # understanding-buildpacks
+
 This is a repo to learn how to use python buildpacks
 
 Buildpack gives you the ability to not have to worry about building a docker file.
 
-1. Install buildpack tool to build the containers from buildpack
+Buildpacks are a standard created by cloudfoundry
+
+1. Build your app
+
+    ```python
+    print("Hello World!")
+    ```
+
+2. Install buildpack tool to build the containers from buildpack
 
     https://buildpacks.io/docs/tools/pack/
 
-2. Verify the version
+3. Verify the version
 
     ```bash
     pack --version
     ```
 
-3. Create the default builder for packeto
+4. Create the default builder for packeto
 
     ```bash
     pack config default-builder paketobuildpacks/builder:full
     ```
 
-4. Create `Profile` and add your app there.
+5. Create `Profile` and add your app there.
 
     `web: python hello.py`
 
-5. Build your app using a python build pack
+6. Build your app using a python build pack
 
     ```bash
     pack build myapp --buildpack paketo-community/python@0.4.1
     ```
 
-6. Run your app with docker
+7. Run your app with docker
 
     `docker run myapp`
 
-7. To find build packs
+8. To find build packs
 
     `https://registry.buildpacks.io/searches/python`
+
+## Notes
+
+Pass in your env... III. Config https://12factor.net/config
+
+You dont have to worry about doing the dockerfile configuration
+
+The build pack will automatically grab the `Procfile`, `buildpack.yml`, `requirements.txt`
+
+Here's a sample buildpack: https://github.com/paketo-community/python/tree/main/integration/testdata/pip

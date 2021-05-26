@@ -2,7 +2,9 @@
 
 This is a repo to learn how to use python buildpacks
 
-Buildpack gives you the ability to not have to worry about building a docker file.
+Maintaining and building a `Dockerfile` can be a pain.
+
+Buildpacks are here to save the day. They give you the ability to not have to worry about building a dockerfile.
 
 Buildpacks are a standard created by cloudfoundry
 
@@ -10,6 +12,11 @@ Buildpacks are a standard created by cloudfoundry
 
     ```python
     print("Hello World!")
+
+    with open('cisco_devnet.txt', 'r') as f:
+            banner = f.read()
+
+    print(banner)
     ```
 
 2. Install buildpack tool to build the containers from buildpack
@@ -42,9 +49,7 @@ Buildpacks are a standard created by cloudfoundry
 
     `docker run myapp`
 
-8. To find build packs
-
-    `https://registry.buildpacks.io/searches/python`
+    ![Results](./images/results.png "Myapp Results")
 
 ## Notes
 
@@ -55,3 +60,15 @@ You dont have to worry about doing the dockerfile configuration
 The build pack will automatically grab the `Procfile`, `buildpack.yml`, `requirements.txt`
 
 Here's a sample buildpack: https://github.com/paketo-community/python/tree/main/integration/testdata/pip
+
+To find build packs `https://registry.buildpacks.io/searches/python`
+
+### About me
+
+Introverted Network Automation Engineer that is changing lives as a Developer Advocate for Cisco DevNet. Pythons scripts are delicious. Especially at 2am on a Saturday night.
+
+Contact Me:
+
+- [LinkedIn](https://www.linkedin.com/in/duanlightfoot/)
+
+- [Twitter](https://twitter.com/labeveryday)

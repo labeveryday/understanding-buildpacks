@@ -6,7 +6,11 @@ Maintaining and building a `Dockerfile` can be a pain.
 
 Buildpacks are here to save the day. They give you the ability to not have to worry about building a dockerfile.
 
-Buildpacks are a standard created by cloudfoundry
+Buildpacks were introduced by Heroku, in 2011, and adopted by Cloud Foundry, Gitlab, Knative and others.
+
+Cloud Native Buildpacks began with Heroku and Pivotal in early 2018.
+
+Cloud Native Buildpacks joined the CNCF in October 2018.
 
 1. Build your app
 
@@ -29,7 +33,7 @@ Buildpacks are a standard created by cloudfoundry
     pack --version
     ```
 
-4. Create the default builder for packeto
+4. Create the default builder for paketo
 
     ```bash
     pack config default-builder paketobuildpacks/builder:full
@@ -55,7 +59,7 @@ Buildpacks are a standard created by cloudfoundry
 
 Pass in your env... III. Config https://12factor.net/config
 
-You dont have to worry about doing the dockerfile configuration
+You don't have to worry about doing the dockerfile configuration
 
 The build pack will automatically grab the `Procfile`, `buildpack.yml`, `requirements.txt`
 
